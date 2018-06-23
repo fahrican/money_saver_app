@@ -6,6 +6,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {FoodPage} from "../pages/food/food";
 import  { DrinksPage } from "../pages/drinks/drinks";
+import {BudgetPage} from "../pages/budget/budget";
+import {ClothesPage} from "../pages/clothes/clothes";
+import {EarningsPage} from "../pages/earnings/earnings";
+import {ExpensesPage} from "../pages/expenses/expenses";
+import {HealthPage} from "../pages/health/health";
+import {LoansPage} from "../pages/loans/loans";
+import {NightLifePage} from "../pages/night-life/night-life";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +22,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     FoodPage,
-    DrinksPage
+    DrinksPage,
+    BudgetPage,
+    ClothesPage,
+    EarningsPage,
+    ExpensesPage,
+    HealthPage,
+    LoansPage,
+    NightLifePage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +40,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     FoodPage,
-    DrinksPage
+    DrinksPage,
+    BudgetPage,
+    ClothesPage,
+    EarningsPage,
+    ExpensesPage,
+    HealthPage,
+    LoansPage,
+    NightLifePage
   ],
   providers: [
     StatusBar,

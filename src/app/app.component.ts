@@ -1,11 +1,18 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component, ViewChild} from '@angular/core';
+import {Nav, Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { FoodPage } from "../pages/food/food";
+import {HomePage} from '../pages/home/home';
+import {FoodPage} from "../pages/food/food";
 import {DrinksPage} from "../pages/drinks/drinks";
+import {BudgetPage} from "../pages/budget/budget";
+import {ClothesPage} from "../pages/clothes/clothes";
+import {EarningsPage} from "../pages/earnings/earnings";
+import {ExpensesPage} from "../pages/expenses/expenses";
+import {HealthPage} from "../pages/health/health";
+import {LoansPage} from "../pages/loans/loans";
+import {NightLifePage} from "../pages/night-life/night-life";
 
 @Component({
   templateUrl: 'app.html'
@@ -15,16 +22,23 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'home', component: HomePage },
-      { title: 'food', component: FoodPage },
-      { title: 'drinks', component: DrinksPage },
+      {title: 'home', component: HomePage},
+      {title: 'food', component: FoodPage},
+      {title: 'drinks', component: DrinksPage},
+      {title: 'clothes', component: ClothesPage},
+      {title: 'health', component: HealthPage},
+      {title: 'night life', component: NightLifePage},
+      {title: 'expenses', component: ExpensesPage},
+      {title: 'earnings', component: EarningsPage},
+      {title: 'loans', component: LoansPage},
+      {title: 'budget', component: BudgetPage}
     ];
 
   }
