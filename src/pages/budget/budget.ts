@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the BudgetPage page.
@@ -15,11 +16,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BudgetPage {
 
+  @ViewChild('monthlyBudget') monthlyBudget;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BudgetPage');
+  saveInput(monthlyBudget){
+
+    this.navCtrl.setRoot(HomePage, {
+
+      budget: monthlyBudget
+    });
+  }
+
+  clearInput(){
+
+    this.monthlyBudget.value = "";
   }
 
 }

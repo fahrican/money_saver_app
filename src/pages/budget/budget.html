@@ -15,7 +15,19 @@
 
 </ion-header>
 
-
 <ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Monthly budget: </ion-label>
+      <ion-input type="number" #monthlyBudget></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button color="danger" type="reset" (click)="clearInput()">Delete</button>
+  <button ion-button color="secondary" id="saveButton" (click)="saveInput(monthlyBudget.value)">Save</button>
+
 
 </ion-content>
