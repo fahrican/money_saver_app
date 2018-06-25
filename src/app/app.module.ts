@@ -13,6 +13,7 @@ import {ExpensesPage} from "../pages/expenses/expenses";
 import {HealthPage} from "../pages/health/health";
 import {LoansPage} from "../pages/loans/loans";
 import {NightLifePage} from "../pages/night-life/night-life";
+import { IonicStorageModule } from '@ionic/storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,6 +35,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

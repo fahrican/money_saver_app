@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -7,11 +8,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  monthyBudget: number;
+  public mBudget;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public storage: Storage) {
 
-    this.monthyBudget = navParams.get('budget');
+    this.mBudget = navParams.get('budget');
+
+
+
   }
 
 }
