@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -8,24 +8,41 @@ import { Storage } from '@ionic/storage';
 })
 export class HomePage {
 
-  public mBudget;
+  public mBudget: number = 0;
+  public testVal: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public storage: Storage) {
 
-    this.mBudget = navParams.get('budget');
+    this.testVal = navParams.get('budget');
+    if (this.testVal == null || this.testVal == null) {
+      this.testVal = 0;
+    }
+    this.getStorageValue();
+    this.setStorageValue();
+  }
 
-    this.storage.set('budget', this.mBudget).then(value => {
+  setStorageValue(){
+
+    this.storage.set('budget', this.testVal).then(value => {
+
+      this.mBudget = value;
       console.log(value);
     });
   }
 
-  getStorageValue(){
-    this.storage.get('budget').then(value => {
-      this.mBudget = value;
-      console.log(this.mBudget);
-    });
+  getStorageValue(): number {
 
+    let temp: number = -1;
+    this.storage.get('budget').then(value => {
+
+      if (value == 0 || value === 0) {
+        return 0;
+      }
+      temp = value;
+      console.log(value);
+    });
+    return temp;
   }
 
 }
