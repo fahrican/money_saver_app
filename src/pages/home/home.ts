@@ -15,7 +15,7 @@ export class HomePage {
               public storage: Storage) {
 
     this.testVal = navParams.get('budget');
-    if (this.testVal === null || this.testVal == null) {
+    if (this.testVal == null) {
       this.testVal = 0;
     }
     this.getStorageValue();
