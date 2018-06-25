@@ -11,11 +11,10 @@
 
   <div>
     <ion-list>
-      <p ion-item *ngIf="mBudget != null">money left: {{mBudget}}</p>
-      <p ion-item *ngIf="mBudget == null">money left: not defined yet!</p>
+      <p ion-item *ngIf="getStorageValue != null">money left: {{getStorageValue}}</p>
+      <p ion-item *ngIf="getStorageValue == null">money left: not defined yet!</p>
       <p ion-item>expenses:</p>
     </ion-list>
   </div>
-
 
 </ion-content>

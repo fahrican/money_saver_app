@@ -15,7 +15,16 @@ export class HomePage {
 
     this.mBudget = navParams.get('budget');
 
+    this.storage.set('budget', this.mBudget).then(value => {
+      console.log(value);
+    });
+  }
 
+  getStorageValue(){
+    this.storage.get('budget').then(value => {
+      this.mBudget = value;
+      console.log(this.mBudget);
+    });
 
   }
 
