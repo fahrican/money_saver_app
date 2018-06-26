@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HomePage} from "../home/home";
+import {Storage} from '@ionic/storage';
+
 
 /**
  * Generated class for the BudgetPage page.
@@ -17,15 +19,30 @@ import {HomePage} from "../home/home";
 export class BudgetPage {
 
   @ViewChild('monthlyBudget') monthlyBudget;
+  public budget: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private storage: Storage)
+  {
+
+
+
+    this.storage.get('budget').then((val) => {
+      this.budget = val;
+    });
   }
 
-  saveInput(monthlyBudget){
+  ionViewDidEnter(){
+    this.storage.set('budget', this.budget);
+  }
 
+  saveInput(){
+
+    console.log("test:" + this.budget);
+    this.storage.set('budget', this.budget);
     this.navCtrl.setRoot(HomePage, {
 
-      budget: monthlyBudget
+      budget: this.budget
     });
   }
 

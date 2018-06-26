@@ -9,24 +9,42 @@ import {Storage} from '@ionic/storage';
 export class HomePage {
 
   public mBudget: number = 0;
-  public testVal: number = 0;
+  public testVal;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public storage: Storage) {
+              private storage: Storage)
+  {
 
     this.testVal = navParams.get('budget');
-    if (this.testVal == null) {
+    /*
+    if (!this.testVal) {
       this.testVal = 0;
     }
     this.getStorageValue();
-    this.setStorageValue();
+    this.setStorageValue();*/
+    this.storage.get('budget').then(value => {
+      this.mBudget = value;
+    });
+  }
+
+
+  ionViewDidEnter(){
+
+    this.storage.get('budget').then((val) => {
+      this.mBudget = val;
+    });
+  }
+
+  /*
+  get staticBudget() {
+    return HomePage.mBudget;
   }
 
   setStorageValue(){
 
     this.storage.set('budget', this.testVal).then(value => {
 
-      this.mBudget = value;
+      HomePage.mBudget = value;
       console.log(value);
     });
   }
@@ -43,6 +61,12 @@ export class HomePage {
       console.log(value);
     });
     return temp;
+  } */
+
+  getTest(){
+    this.storage.get('budget').then((val) => {
+      this.mBudget = val;
+    });
   }
 
 }
