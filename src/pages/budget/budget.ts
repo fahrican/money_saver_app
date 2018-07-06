@@ -21,10 +21,7 @@ export class BudgetPage {
   @ViewChild('monthlyBudget') monthlyBudget;
   public budget: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              private storage: Storage)
-  {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage){
 
 
     this.storage.get('budget').then((val) => {
@@ -38,7 +35,6 @@ export class BudgetPage {
 
   saveInput(){
 
-    console.log("test:" + this.budget);
     this.storage.set('budget', this.budget);
     this.navCtrl.setRoot(HomePage, {
 
