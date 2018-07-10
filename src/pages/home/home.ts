@@ -19,12 +19,4 @@ export class HomePage {
     });
   }
 
-  /*ionViewDidEnter(){
-
-    this.storage.get('budget').then((val) => {
-      this.mBudget = val;
-    });
-  }*/
-
-
 }

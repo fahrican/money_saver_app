@@ -29,10 +29,6 @@ export class BudgetPage {
     });
   }
 
-  /*ionViewDidEnter(){
-    this.storage.set('budget', this.budget);
-  }*/
-
   saveInput(){
 
     this.storage.set('budget', this.budget);
@@ -45,6 +41,7 @@ export class BudgetPage {
   clearInput(){
 
     this.monthlyBudget.value = "";
+    this.storage.set('budget', 0);
   }
 
 }
