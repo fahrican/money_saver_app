@@ -20,7 +20,7 @@
   <ion-list>
 
     <ion-item>
-      <ion-label>Monthly budget: </ion-label>
+      <ion-label>Monthly budget:</ion-label>
       <ion-input type="number" #monthlyBudget [(ngModel)]="budget"></ion-input>
     </ion-item>
 
@@ -28,6 +28,5 @@
 
   <button ion-button color="danger" type="reset" (click)="clearInput()">Delete</button>
   <button ion-button color="secondary" id="saveButton" (click)="saveInput(monthlyBudget.value)">Save</button>
-
 
 </ion-content>

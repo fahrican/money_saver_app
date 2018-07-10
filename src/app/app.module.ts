@@ -1,11 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {BrowserModule} from '@angular/platform-browser';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import {MyApp} from './app.component';
+import {HomePage} from '../pages/home/home';
 import {FoodPage} from "../pages/food/food";
-import  { DrinksPage } from "../pages/drinks/drinks";
+import {DrinksPage} from "../pages/drinks/drinks";
 import {BudgetPage} from "../pages/budget/budget";
 import {ClothesPage} from "../pages/clothes/clothes";
 import {EarningsPage} from "../pages/earnings/earnings";
@@ -13,10 +13,11 @@ import {ExpensesPage} from "../pages/expenses/expenses";
 import {HealthPage} from "../pages/health/health";
 import {LoansPage} from "../pages/loans/loans";
 import {NightLifePage} from "../pages/night-life/night-life";
-import { IonicStorageModule } from '@ionic/storage';
+import {AddFoodPage} from "../pages/add-food/add-food";
+import {IonicStorageModule} from '@ionic/storage';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ExpensesPage,
     HealthPage,
     LoansPage,
-    NightLifePage
+    NightLifePage,
+    AddFoodPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ExpensesPage,
     HealthPage,
     LoansPage,
-    NightLifePage
+    NightLifePage,
+    AddFoodPage
   ],
   providers: [
     StatusBar,
@@ -57,4 +60,5 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+}

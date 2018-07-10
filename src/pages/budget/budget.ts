@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {Storage} from '@ionic/storage';
 
@@ -21,24 +21,23 @@ export class BudgetPage {
   @ViewChild('monthlyBudget') monthlyBudget;
   public budget: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage){
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
     this.storage.get('budget').then((val) => {
       this.budget = val;
     });
   }
 
-  saveInput(){
+  saveInput() {
 
     this.storage.set('budget', this.budget);
-    this.navCtrl.setRoot(HomePage, {
 
+    this.navCtrl.setRoot(HomePage, {
       budget: this.budget
     });
   }
 
-  clearInput(){
+  clearInput() {
 
     this.monthlyBudget.value = "";
     this.storage.set('budget', 0);

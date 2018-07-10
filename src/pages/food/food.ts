@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Storage} from '@ionic/storage';
+import {HomePage} from "../home/home";
+import {AddFoodPage} from "../add-food/add-food";
+
 
 /**
  * Generated class for the FoodPage page.
@@ -15,11 +19,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FoodPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public budget: number;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+
+    this.storage.get('budget').then((val) => {
+      this.budget = val;
+    });
   }
 
 
-  addExpense(){
+  addExpense() {
 
+    this.navCtrl.setRoot(AddFoodPage, {
+      budget: this.budget
+    });
   }
 }
