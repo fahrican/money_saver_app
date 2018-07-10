@@ -29,9 +29,9 @@ export class BudgetPage {
     });
   }
 
-  ionViewDidEnter(){
+  /*ionViewDidEnter(){
     this.storage.set('budget', this.budget);
-  }
+  }*/
 
   saveInput(){
 
