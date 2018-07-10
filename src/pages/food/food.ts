@@ -18,8 +18,8 @@ export class FoodPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FoodPage');
-  }
 
+  addExpense(){
+
+  }
 }
