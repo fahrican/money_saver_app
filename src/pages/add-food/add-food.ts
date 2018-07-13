@@ -24,7 +24,7 @@ export class AddFoodPage {
   private fDate = "";
 
   @ViewChild('foodAmount') foodAmount;
-  private fAmount = 0;
+  private fAmount: number = 0;
 
   @ViewChild('foodPaymentMethod') foodPaymentMethod;
   private fPaymentMethod = "";
@@ -74,6 +74,7 @@ export class AddFoodPage {
     this.fDate = this.foodDate.value;
     this.fAmount = this.foodAmount.value;
     this.subtractFromMonthlyBudget();
+    this.addToMonthlyExpenses();
     this.fPaymentMethod = this.foodPaymentMethod.value;
     this.fNote = this.foodNote.value;
 
@@ -85,5 +86,12 @@ export class AddFoodPage {
     HomePage.mBudget -= this.fAmount;
     this.storage.set('budget', HomePage.mBudget);
     console.log("Budget: " + HomePage.mBudget);
+  }
+
+  addToMonthlyExpenses(){
+
+    HomePage.monthlyExpenses = +HomePage.monthlyExpenses + +this.fAmount;
+    this.storage.set('monthlyExpenses', HomePage.monthlyExpenses);
+    console.log("monthly expenses: " + HomePage.monthlyExpenses);
   }
 }

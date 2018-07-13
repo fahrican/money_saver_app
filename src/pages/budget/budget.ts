@@ -31,6 +31,7 @@ export class BudgetPage {
   saveInput() {
 
     this.storage.set('budget', this.budget);
+    this.storage.set('monthlyExpenses', 0);
 
     this.navCtrl.setRoot(HomePage, {
       budget: this.budget
@@ -41,6 +42,7 @@ export class BudgetPage {
 
     this.monthlyBudget.value = "";
     this.storage.set('budget', 0);
+    this.storage.set('monthlyExpenses', 0);
   }
 
 }
