@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {IonicPage, NavController, AlertController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the AddFoodPage page.
@@ -22,14 +22,35 @@ export class AddFoodPage {
   @ViewChild('foodPaymentMethod') foodPaymentMethod;
   @ViewChild('foodNote') foodNote;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private alertCtrl: AlertController) {
+
   }
 
-  clearFoodExpense(){
+  presentAlert() {
+
+    let alert = this.alertCtrl.create({
+      title: 'Field is empty!',
+      subTitle: 'Every field needs a input!!!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  clearFoodExpense() {
 
     this.foodDate.value = "";
     this.foodAmount.value = "";
     this.foodPaymentMethod.value = "";
     this.foodNote.value = "";
+  }
+
+  saveFoodExpense() {
+
+    if (this.foodDate.value === "" || this.foodAmount.value === ""
+      || this.foodPaymentMethod.value === "" || this.foodNote.value === "")
+    {
+      this.presentAlert();
+    }
   }
 }
