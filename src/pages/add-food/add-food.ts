@@ -1,5 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
 import {IonicPage, NavController, AlertController, NavParams} from 'ionic-angular';
+import {FoodPage} from "../food/food";
+import {Storage} from '@ionic/storage';
+import {HomePage} from "../home/home";
+import {FoodModelPage} from "../food-model/food-model";
+
 
 /**
  * Generated class for the AddFoodPage page.
@@ -19,11 +24,16 @@ export class AddFoodPage {
   private fDate = "";
 
   @ViewChild('foodAmount') foodAmount;
+  private fAmount = 0;
+
   @ViewChild('foodPaymentMethod') foodPaymentMethod;
+  private fPaymentMethod = "";
+
   @ViewChild('foodNote') foodNote;
+  private fNote = "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private alertCtrl: AlertController) {
+              private alertCtrl: AlertController, private storage: Storage) {
 
   }
 
@@ -48,9 +58,24 @@ export class AddFoodPage {
   saveFoodExpense() {
 
     if (this.foodDate.value === "" || this.foodAmount.value === ""
-      || this.foodPaymentMethod.value === "" || this.foodNote.value === "")
-    {
+      || this.foodPaymentMethod.value === "" || this.foodNote.value === "") {
       this.presentAlert();
     }
+    else {
+      let foodPage: FoodModelPage = this.generateFoodPage();
+      FoodPage.foodList.push(foodPage);
+
+      this.navCtrl.setRoot(FoodPage);
+    }
+  }
+
+  generateFoodPage() {
+
+    this.fDate = this.foodDate.value;
+    this.fAmount = this.foodAmount.value;
+    this.fPaymentMethod = this.foodPaymentMethod.value;
+    this.fNote = this.foodNote.value;
+
+    return new FoodModelPage(this.fDate, this.fAmount, this.fPaymentMethod, this.fNote);
   }
 }

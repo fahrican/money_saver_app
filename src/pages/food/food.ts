@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {HomePage} from "../home/home";
 import {AddFoodPage} from "../add-food/add-food";
+import {FoodModelPage} from "../food-model/food-model";
 
 
 /**
@@ -19,20 +20,23 @@ import {AddFoodPage} from "../add-food/add-food";
 })
 export class FoodPage {
 
-  public budget: number;
+  public static foodList: FoodModelPage[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+               private storage: Storage) {
 
-    this.storage.get('budget').then((val) => {
-      this.budget = val;
-    });
+    //this.storage.set('foodList', FoodPage.foodList);
+
   }
 
 
+  ionViewDidLoad() {
+    console.log('FoodPage: test');
+    console.log(FoodPage.foodList.length)
+  }
+
   addExpense() {
 
-    this.navCtrl.setRoot(AddFoodPage, {
-      budget: this.budget
-    });
+    this.navCtrl.setRoot(AddFoodPage);
   }
 }
