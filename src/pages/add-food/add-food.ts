@@ -73,9 +73,17 @@ export class AddFoodPage {
 
     this.fDate = this.foodDate.value;
     this.fAmount = this.foodAmount.value;
+    this.subtractFromMonthlyBudget();
     this.fPaymentMethod = this.foodPaymentMethod.value;
     this.fNote = this.foodNote.value;
 
     return new FoodModelPage(this.fDate, this.fAmount, this.fPaymentMethod, this.fNote);
+  }
+
+  subtractFromMonthlyBudget(){
+
+    HomePage.mBudget -= this.fAmount;
+    this.storage.set('budget', HomePage.mBudget);
+    console.log("Budget: " + HomePage.mBudget);
   }
 }

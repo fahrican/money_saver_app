@@ -8,15 +8,18 @@ import {Storage} from '@ionic/storage';
 })
 export class HomePage {
 
-  public mBudget: number = 0;
+  public static mBudget: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private storage: Storage)
   {
 
     this.storage.get('budget').then(value => {
-      this.mBudget = value;
+      HomePage.mBudget = value;
     });
   }
 
+  get monthlyBudget(){
+    return HomePage.mBudget;
+  }
 }

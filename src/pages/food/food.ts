@@ -25,13 +25,14 @@ export class FoodPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
                private storage: Storage) {
 
-    //this.storage.set('foodList', FoodPage.foodList);
-
   }
 
 
   ionViewDidLoad() {
-    console.log('FoodPage: test');
+    if (FoodPage.foodList.length === 0){
+      this.storage.set('foodList', FoodPage.foodList);
+      console.log('FoodPage: generated foodList');
+    }
     console.log(FoodPage.foodList.length)
   }
 
