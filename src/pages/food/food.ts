@@ -4,6 +4,7 @@ import {Storage} from '@ionic/storage';
 import {HomePage} from "../home/home";
 import {AddFoodPage} from "../add-food/add-food";
 import {FoodModelPage} from "../food-model/food-model";
+import {StorageKeys} from "../../app/app.component";
 
 
 /**
@@ -30,7 +31,7 @@ export class FoodPage {
 
   ionViewDidLoad() {
     if (FoodPage.foodList.length === 0){
-      this.storage.set('foodList', FoodPage.foodList);
+      this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
       console.log('FoodPage: generated foodList');
     }
     console.log(FoodPage.foodList.length)

@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {Storage} from '@ionic/storage';
+import {StorageKeys} from "../../app/app.component";
 
 
 /**
@@ -23,15 +24,15 @@ export class BudgetPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
-    this.storage.get('budget').then((val) => {
+    this.storage.get(StorageKeys.MONTHLY_BUDGET).then((val) => {
       this.budget = val;
     });
   }
 
   saveInput() {
 
-    this.storage.set('budget', this.budget);
-    this.storage.set('monthlyExpenses', 0);
+    this.storage.set(StorageKeys.MONTHLY_BUDGET, this.budget);
+    this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
 
     this.navCtrl.setRoot(HomePage, {
       budget: this.budget
@@ -41,8 +42,8 @@ export class BudgetPage {
   clearInput() {
 
     this.monthlyBudget.value = "";
-    this.storage.set('budget', 0);
-    this.storage.set('monthlyExpenses', 0);
+    this.storage.set(StorageKeys.MONTHLY_BUDGET, 0);
+    this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
   }
 
 }

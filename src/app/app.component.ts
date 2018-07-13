@@ -14,6 +14,13 @@ import {HealthPage} from "../pages/health/health";
 import {LoansPage} from "../pages/loans/loans";
 import {NightLifePage} from "../pages/night-life/night-life";
 
+
+export enum StorageKeys {
+  MONTHLY_BUDGET = "budget",
+  MONTHLY_EXPENSES = "monthlyBudget",
+  FOOD_LIST = "foodList"
+}
+
 @Component({
   templateUrl: 'app.html'
 })

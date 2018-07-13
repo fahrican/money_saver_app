@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {FoodPage} from "../food/food";
+import {StorageKeys} from "../../app/app.component";
 
 @Component({
   selector: 'page-home',
@@ -15,11 +16,11 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private storage: Storage) {
 
-    this.storage.get('budget').then(value => {
+    this.storage.get(StorageKeys.MONTHLY_BUDGET).then(value => {
       HomePage.mBudget = value;
     });
 
-    this.storage.get('monthlyExpenses').then(value => {
+    this.storage.get(StorageKeys.MONTHLY_EXPENSES).then(value => {
       HomePage.monthlyExpenses = value;
     });
   }
@@ -27,7 +28,7 @@ export class HomePage {
   ionViewDidLoad() {
 
     console.log("budget: " + this.monthlyBudget);
-    console.log('monthlyExpenses: ' + this.theMonthlyExpenses);
+    console.log('MONTHLY_EXPENSES: ' + this.theMonthlyExpenses);
   }
 
   get monthlyBudget() {
