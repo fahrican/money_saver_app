@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,11 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddFoodPage {
 
+  @ViewChild('foodDate') foodDate;
+  private fDate = "";
+
+  @ViewChild('foodAmount') foodAmount;
+  @ViewChild('foodPaymentMethod') foodPaymentMethod;
+  @ViewChild('foodNote') foodNote;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddFoodPage');
-  }
+  clearFoodExpense(){
 
+    this.foodDate.value = "";
+    this.foodAmount.value = "";
+    this.foodPaymentMethod.value = "";
+    this.foodNote.value = "";
+  }
 }

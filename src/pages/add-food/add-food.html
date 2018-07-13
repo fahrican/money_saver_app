@@ -7,7 +7,12 @@
 <ion-header>
 
   <ion-navbar>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>add food expense</ion-title>
+
   </ion-navbar>
 
 </ion-header>
@@ -20,22 +25,22 @@
 
     <ion-item>
       <ion-label>Date:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" required #foodDate [(ngModel)]="fDate"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Amount:</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" required #foodAmount [(ngModel)]="fAmount"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Payment method:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" required #foodPaymentMethod [(ngModel)]="fPaymentMethod"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Note:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" required #foodNote [(ngModel)]="fNote"></ion-input>
     </ion-item>
 
   </ion-list>
