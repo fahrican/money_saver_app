@@ -28,17 +28,21 @@ export class FoodPage {
 
   }
 
-
   ionViewDidLoad() {
+
     if (FoodPage.foodList.length === 0){
       this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
       console.log('FoodPage: generated foodList');
     }
-    console.log(FoodPage.foodList.length)
+    console.log('foodlist size:' + FoodPage.foodList.length);
   }
 
   addExpense() {
 
     this.navCtrl.setRoot(AddFoodPage);
+  }
+
+  get theFoodList(){
+    return FoodPage.foodList;
   }
 }

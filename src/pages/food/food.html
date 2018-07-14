@@ -16,19 +16,25 @@
 
 <ion-content padding>
 
-  <ion-card>
-    <ion-card-content>
-      <ion-card-title>
-        13.07.2018
-      </ion-card-title>
+  <ion-list>
+    <ion-item-sliding *ngFor="let food of theFoodList">
       <ion-item>
-        <ion-icon name='pizza' item-start style="color: #d03e84"></ion-icon>
-        Billa
-        <ion-badge item-end>3,80€</ion-badge>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>
+              {{food.date}}
+            </ion-card-title>
+            <ion-item>
+              <ion-icon name='pizza' item-start style="color: #d03e84"></ion-icon>
+              {{food.paymentMethod}}
+              <ion-badge item-end>{{food.amount}}€</ion-badge>
+            </ion-item>
+            <p>{{food.note}}</p>
+          </ion-card-content>
+        </ion-card>
       </ion-item>
-      <p>this was just a test purchase.</p>
-    </ion-card-content>
-  </ion-card>
+    </ion-item-sliding>
+  </ion-list>
 
   <button ion-button id="addButton" (click)="addExpense()">+</button>
 

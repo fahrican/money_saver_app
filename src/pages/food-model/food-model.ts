@@ -15,20 +15,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FoodModelPage {
 
-  public date = "";
-  private amount = 0;
-  private paymentMethod = "";
-  private note = "";
+  private _date = "";
+  private _amount = 0;
+  private _paymentMethod = "";
+  private _note = "";
 
   constructor(private dateParam: string, private amountParam: number,
               private paymentMethodParam: string, private noteParam: string,) {
 
-    this.date = dateParam;
-    this.amount = amountParam;
-    this.paymentMethod = paymentMethodParam;
-    this.note = noteParam;
-
+    this._date = dateParam;
+    this._amount = amountParam;
+    this._paymentMethod = paymentMethodParam;
+    this._note = noteParam;
   }
 
 
+  get date(): string {
+    return this._date;
+  }
+
+  get amount(): number {
+    return this._amount;
+  }
+
+  get paymentMethod(): string {
+    return this._paymentMethod;
+  }
+
+  get note(): string {
+    return this._note;
+  }
 }

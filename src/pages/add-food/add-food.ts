@@ -64,7 +64,7 @@ export class AddFoodPage {
     else {
       let foodPage: FoodModelPage = this.generateFoodPage();
       FoodPage.foodList.push(foodPage);
-
+      this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
       this.navCtrl.setRoot(FoodPage);
     }
   }
