@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {Storage} from '@ionic/storage';
 import {StorageKeys} from "../../app/app.component";
+import {FoodPage} from "../food/food";
 
 
 /**
@@ -44,6 +45,13 @@ export class BudgetPage {
     this.monthlyBudget.value = "";
     this.storage.set(StorageKeys.MONTHLY_BUDGET, 0);
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
+    FoodPage.foodList = [];
+    this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
+  }
+
+  ionViewDidLoad() {
+
+    console.log("foodlist: " + FoodPage.foodList.length);
   }
 
 }
