@@ -51,7 +51,6 @@ export class BudgetPage {
 
   ionViewDidLoad() {
 
-    console.log("foodlist: " + FoodPage.foodList.length);
   }
 
 }

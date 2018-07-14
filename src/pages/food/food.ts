@@ -34,7 +34,6 @@ export class FoodPage {
       this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
       console.log('FoodPage: generated foodList');
     }
-    console.log('foodlist size:' + FoodPage.foodList.length);
   }
 
   addExpense() {

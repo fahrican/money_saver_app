@@ -85,13 +85,11 @@ export class AddFoodPage {
 
     HomePage.mBudget -= this.fAmount;
     this.storage.set(StorageKeys.MONTHLY_BUDGET, HomePage.mBudget);
-    console.log("Budget: " + HomePage.mBudget);
   }
 
   addToMonthlyExpenses(){
 
     HomePage.monthlyExpenses = +HomePage.monthlyExpenses + +this.fAmount;
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, HomePage.monthlyExpenses);
-    console.log("monthly expenses: " + HomePage.monthlyExpenses);
   }
 }
