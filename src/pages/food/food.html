@@ -36,6 +36,10 @@
     </ion-item-sliding>
   </ion-list>
 
-  <button ion-button id="addButton" (click)="addExpense()">+</button>
+  <ion-fab right bottom>
+    <button ion-fab color="default" (click)="addExpense()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>
