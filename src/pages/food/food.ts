@@ -26,6 +26,13 @@ export class FoodPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
                private storage: Storage) {
 
+
+/*
+    this.storage.get(StorageKeys.FOOD_LIST).then(value => {
+      FoodPage.foodList = value;
+    });
+*/
+
   }
 
   ionViewDidLoad() {
@@ -33,6 +40,14 @@ export class FoodPage {
     if (FoodPage.foodList.length === 0){
       this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
       console.log('FoodPage: generated foodList');
+    }
+    console.log("Food list: " + FoodPage.foodList.length);
+    for (var i = 0; i < FoodPage.foodList.length; i++) {
+
+      console.log(FoodPage.foodList[i].date);
+      console.log(FoodPage.foodList[i].paymentMethod);
+      console.log(FoodPage.foodList[i].amount);
+      console.log(FoodPage.foodList[i].note);
     }
   }
 

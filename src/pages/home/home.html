@@ -12,10 +12,10 @@
   <div>
     <ion-list>
 
-      <p ion-item *ngIf="monthlyBudget > 0">money left: {{monthlyBudget}} €</p>
-      <p ion-item *ngIf="(monthlyBudget === 0)">money left: not defined yet!</p>
+      <p ion-item *ngIf="getMonthlyBudget > 0">money left: {{getMonthlyBudget}} €</p>
+      <p ion-item *ngIf="(getMonthlyBudget === 0)">money left: not defined yet!</p>
 
-      <p ion-item>expenses: {{theMonthlyExpenses}} €</p>
+      <p ion-item>expenses: {{getMonthlyExpenses}} €</p>
     </ion-list>
   </div>
 

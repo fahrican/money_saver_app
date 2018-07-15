@@ -34,6 +34,8 @@ export class BudgetPage {
 
     this.storage.set(StorageKeys.MONTHLY_BUDGET, this.budget);
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
+    FoodPage.foodList = [];
+    this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
 
     this.navCtrl.setRoot(HomePage, {
       budget: this.budget

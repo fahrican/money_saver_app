@@ -17,7 +17,7 @@ import {NightLifePage} from "../pages/night-life/night-life";
 
 export enum StorageKeys {
   MONTHLY_BUDGET = "budget",
-  MONTHLY_EXPENSES = "monthlyBudget",
+  MONTHLY_EXPENSES = "monthlyExpenses",
   FOOD_LIST = "foodList"
 }
 

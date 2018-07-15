@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {StorageKeys} from "../../app/app.component";
+import {FoodPage} from "../food/food";
 
 @Component({
   selector: 'page-home',
@@ -26,13 +27,14 @@ export class HomePage {
 
   ionViewDidLoad() {
 
+    console.log("size:" + FoodPage.foodList.length);
   }
 
-  get monthlyBudget() {
+  get getMonthlyBudget() {
     return HomePage.mBudget;
   }
 
-  get theMonthlyExpenses() {
+  get getMonthlyExpenses() {
     return HomePage.monthlyExpenses;
   }
 }
