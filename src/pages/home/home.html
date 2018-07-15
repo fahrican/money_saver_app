@@ -9,14 +9,21 @@
 
 <ion-content padding>
 
-  <div>
-    <ion-list>
+  <ion-card id="budgetCard" color="secondary">
+    <ion-card-header>
+      Budget
+    </ion-card-header>
+    <ion-card-content *ngIf="getMonthlyBudget > 0">money left: {{getMonthlyBudget}}€</ion-card-content>
+    <ion-card-content *ngIf="(getMonthlyBudget === 0)">money left: not defined yet!</ion-card-content>
+  </ion-card>
 
-      <p ion-item *ngIf="getMonthlyBudget > 0">money left: {{getMonthlyBudget}} €</p>
-      <p ion-item *ngIf="(getMonthlyBudget === 0)">money left: not defined yet!</p>
-
-      <p ion-item>expenses: {{getMonthlyExpenses}} €</p>
-    </ion-list>
-  </div>
+  <ion-card id="expensesCard" color="danger">
+    <ion-card-header>
+      Expenses
+    </ion-card-header>
+    <ion-card-content>
+      money spent so far: {{getMonthlyExpenses}}€
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
