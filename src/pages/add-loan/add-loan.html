@@ -1,26 +1,26 @@
 <!--
-  Generated template for the LoansPage page.
+  Generated template for the AddLoanPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
+
   <ion-navbar>
+
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>loans</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-title>add loan</ion-title>
 
+  </ion-navbar>
+
+</ion-header>
 
 <ion-content padding>
 
 
-  <ion-fab right bottom>
-    <button ion-fab color="default" (click)="addLoan()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-  </ion-fab>
+  <button ion-button color="danger" type="reset" (click)="clearFoodExpense()">Delete</button>
+  <button ion-button color="secondary" id="saveButton" (click)="saveFoodExpense()">Save</button>
 
 </ion-content>

@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {AddFoodPage} from "../add-food/add-food";
-import {AddLoanPage} from "../add-loan/add-loan";
 
 /**
- * Generated class for the LoansPage page.
+ * Generated class for the AddLoanPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,20 +10,16 @@ import {AddLoanPage} from "../add-loan/add-loan";
 
 @IonicPage()
 @Component({
-  selector: 'page-loans',
-  templateUrl: 'loans.html',
+  selector: 'page-add-loan',
+  templateUrl: 'add-loan.html',
 })
-export class LoansPage {
+export class AddLoanPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoansPage');
-  }
-
-  addLoan(){
-    this.navCtrl.setRoot(AddLoanPage);
+    console.log('ionViewDidLoad AddLoanPage');
   }
 
 }
