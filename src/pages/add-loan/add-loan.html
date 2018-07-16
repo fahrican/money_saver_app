@@ -20,6 +20,42 @@
 <ion-content padding>
 
 
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Date:</ion-label>
+      <ion-input type="text" required #loanDate [(ngModel)]="lDate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Amount:</ion-label>
+      <ion-input type="number" required #loanAmount [(ngModel)]="lAmount"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Name of friend:</ion-label>
+      <ion-input type="text" required #loanNameOfFriend [(ngModel)]="lNameOfFriend"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Note:</ion-label>
+      <ion-input type="text" required #loanNote [(ngModel)]="lNote"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list radio-group [(ngModel)]="relationship">
+    <ion-item>
+      <ion-label>Money I have to pay back</ion-label>
+      <ion-radio (ionSelect)="mcqAnswer(1)" value="friends"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Money I get back from friend</ion-label>
+      <ion-radio (ionSelect)="mcqAnswer(2)" value="family"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+
   <button ion-button color="danger" type="reset" (click)="clearFoodExpense()">Delete</button>
   <button ion-button color="secondary" id="saveButton" (click)="saveFoodExpense()">Save</button>
 
