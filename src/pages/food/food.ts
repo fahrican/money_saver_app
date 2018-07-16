@@ -51,7 +51,7 @@ export class FoodPage {
     }
   }
 
-  addExpense() {
+  addFoodExpense() {
 
     this.navCtrl.setRoot(AddFoodPage);
   }

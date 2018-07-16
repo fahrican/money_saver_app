@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AddFoodPage} from "../add-food/add-food";
+import {AddLoanPage} from "../add-loan/add-loan";
 
 /**
  * Generated class for the LoansPage page.
@@ -20,6 +22,10 @@ export class LoansPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoansPage');
+  }
+
+  addLoan(){
+    this.navCtrl.setRoot(AddLoanPage);
   }
 
 }
