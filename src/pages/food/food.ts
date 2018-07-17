@@ -67,12 +67,16 @@ export class FoodPage {
 
     this.navCtrl.setRoot(AddFoodPage);
 
-    this.testF.push("hihi");
-    this.storage.set(StorageKeys.TEST, JSON.stringify(this.testF));
     console.log("size: " + this.testF.length);
   }
 
   get theFoodList(){
     return FoodPage.foodList;
+  }
+
+  ionViewWillEnter(){
+
+    this.testF.push(new FoodModelPage("222", 22, "22", "22"));
+    this.storage.set(StorageKeys.TEST, JSON.stringify(this.testF));
   }
 }

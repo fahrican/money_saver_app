@@ -25,7 +25,7 @@ export class BudgetPage {
   @ViewChild('monthlyBudget') monthlyBudget;
   public budget: number = 0;
 
-  private testB = ["hoho", "test"];
+  private testB = [new FoodModelPage("2012", 2, "cash", "test")];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
