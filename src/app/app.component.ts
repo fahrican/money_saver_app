@@ -18,7 +18,8 @@ import {NightLifePage} from "../pages/night-life/night-life";
 export enum StorageKeys {
   MONTHLY_BUDGET = "budget",
   MONTHLY_EXPENSES = "monthlyExpenses",
-  FOOD_LIST = "foodList"
+  FOOD_LIST = "foodList",
+  TEST = "test"
 }
 
 @Component({

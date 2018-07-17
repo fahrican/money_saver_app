@@ -4,6 +4,8 @@ import {HomePage} from "../home/home";
 import {Storage} from '@ionic/storage';
 import {StorageKeys} from "../../app/app.component";
 import {FoodPage} from "../food/food";
+import {FoodModelPage} from "../food-model/food-model";
+import {HttpClientModule} from '@angular/common/http';
 
 
 /**
@@ -23,6 +25,8 @@ export class BudgetPage {
   @ViewChild('monthlyBudget') monthlyBudget;
   public budget: number = 0;
 
+  private testB = ["hoho", "test"];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
     this.storage.get(StorageKeys.MONTHLY_BUDGET).then((val) => {
@@ -36,6 +40,7 @@ export class BudgetPage {
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
     FoodPage.foodList = [];
     this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
+    this.storage.set(StorageKeys.TEST, JSON.stringify(this.testB));
 
     this.navCtrl.setRoot(HomePage, {
       budget: this.budget
@@ -49,9 +54,12 @@ export class BudgetPage {
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
     FoodPage.foodList = [];
     this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
+    this.storage.set(StorageKeys.TEST, []);
+
   }
 
   ionViewDidLoad() {
+    console.log(this.testB);
 
   }
 

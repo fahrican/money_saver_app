@@ -5,6 +5,7 @@ import {HomePage} from "../home/home";
 import {AddFoodPage} from "../add-food/add-food";
 import {FoodModelPage} from "../food-model/food-model";
 import {StorageKeys} from "../../app/app.component";
+import {HttpClientModule} from '@angular/common/http';
 
 
 /**
@@ -22,16 +23,26 @@ import {StorageKeys} from "../../app/app.component";
 export class FoodPage {
 
   public static foodList: FoodModelPage[] = [];
+  private testF = [];
+  error_msg: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
                private storage: Storage) {
 
 
-/*
-    this.storage.get(StorageKeys.FOOD_LIST).then(value => {
-      FoodPage.foodList = value;
+
+    this.storage.get(StorageKeys.TEST).then(value => {
+      //this.testF.push(JSON.parse(value));
+      var counters = JSON.parse(value);
+      for (var i = 0; i < counters.length; i++) {
+        this.testF.push(counters[i]);
+      }
+    }).catch((error) => {
+      this.error_msg = error.error;
+      console.log("eroor food");
+
     });
-*/
+
 
   }
 
@@ -49,11 +60,16 @@ export class FoodPage {
       console.log(FoodPage.foodList[i].amount);
       console.log(FoodPage.foodList[i].note);
     }
+
   }
 
   addFoodExpense() {
 
     this.navCtrl.setRoot(AddFoodPage);
+
+    this.testF.push("hihi");
+    this.storage.set(StorageKeys.TEST, JSON.stringify(this.testF));
+    console.log("size: " + this.testF.length);
   }
 
   get theFoodList(){
