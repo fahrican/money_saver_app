@@ -16,6 +16,7 @@ import {NightLifePage} from "../pages/night-life/night-life";
 import {AddFoodPage} from "../pages/add-food/add-food";
 import {FoodModelPage} from "../pages/food-model/food-model";
 import {AddLoanPage} from "../pages/add-loan/add-loan";
+import {LoanModelPage} from "../pages/loan-model/loan-model";
 import {IonicStorageModule} from '@ionic/storage';
 
 import {StatusBar} from '@ionic-native/status-bar';
@@ -36,7 +37,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
     NightLifePage,
     AddFoodPage,
     FoodModelPage,
-    AddLoanPage
+    AddLoanPage,
+    LoanModelPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
     NightLifePage,
     AddFoodPage,
     FoodModelPage,
-    AddLoanPage
+    AddLoanPage,
+    LoanModelPage
   ],
   providers: [
     StatusBar,

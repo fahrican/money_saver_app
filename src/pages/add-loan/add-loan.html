@@ -47,16 +47,16 @@
   <ion-list radio-group [(ngModel)]="relationship">
     <ion-item>
       <ion-label>Money I have to pay back</ion-label>
-      <ion-radio (ionSelect)="mcqAnswer(1)" value="friends"></ion-radio>
+      <ion-radio (ionSelect)="isDebtAnswer(1)" value="friends"></ion-radio>
     </ion-item>
     <ion-item>
       <ion-label>Money I get back from friend</ion-label>
-      <ion-radio (ionSelect)="mcqAnswer(2)" value="family"></ion-radio>
+      <ion-radio (ionSelect)="isDebtAnswer(2)" value="family"></ion-radio>
     </ion-item>
   </ion-list>
 
 
-  <button ion-button color="danger" type="reset" (click)="clearFoodExpense()">Delete</button>
-  <button ion-button color="secondary" id="saveButton" (click)="saveFoodExpense()">Save</button>
+  <button ion-button color="danger" type="reset" (click)="clearLoanInput()">Delete</button>
+  <button ion-button color="secondary" id="saveButton" (click)="saveLoan()">Save</button>
 
 </ion-content>

@@ -6,6 +6,7 @@ import {StorageKeys} from "../../app/app.component";
 import {FoodPage} from "../food/food";
 import {FoodModelPage} from "../food-model/food-model";
 import {HttpClientModule} from '@angular/common/http';
+import {LoanModelPage} from "../loan-model/loan-model";
 
 
 /**
@@ -27,6 +28,7 @@ export class BudgetPage {
 
   private testB: Array<FoodModelPage> = [new FoodModelPage("1999", 2, "testB", "testB")];
   private foodListBudget: Array<FoodModelPage> = [];
+  private loanListBudget: Array<LoanModelPage> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
@@ -40,6 +42,7 @@ export class BudgetPage {
     this.storage.set(StorageKeys.MONTHLY_BUDGET, this.budget);
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
     this.storage.set(StorageKeys.FOOD_LIST, JSON.stringify(this.foodListBudget));
+    this.storage.set(StorageKeys.LOAN_LIST, JSON.stringify(this.loanListBudget));
     this.storage.set(StorageKeys.TEST, JSON.stringify(this.testB));
 
     this.navCtrl.setRoot(HomePage, {
@@ -53,6 +56,7 @@ export class BudgetPage {
     this.storage.set(StorageKeys.MONTHLY_BUDGET, 0);
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
     this.storage.set(StorageKeys.FOOD_LIST, []);
+    this.storage.set(StorageKeys.LOAN_LIST, []);
     this.storage.set(StorageKeys.TEST, []);
 
   }
