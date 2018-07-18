@@ -22,13 +22,12 @@ import {HttpClientModule} from '@angular/common/http';
 })
 export class FoodPage {
 
-  public static foodList: FoodModelPage[] = [];
-  private testF = [];
+  private foodList:Array<FoodModelPage> = [];
+  private testF:Array<FoodModelPage> = [];
   error_msg: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
                private storage: Storage) {
-
 
 
     this.storage.get(StorageKeys.TEST).then(value => {
@@ -39,7 +38,7 @@ export class FoodPage {
       }
     }).catch((error) => {
       this.error_msg = error.error;
-      console.log("eroor food");
+      console.log("error test");
 
     });
 
@@ -48,35 +47,48 @@ export class FoodPage {
 
   ionViewDidLoad() {
 
-    if (FoodPage.foodList.length === 0){
-      this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
-      console.log('FoodPage: generated foodList');
-    }
-    console.log("Food list: " + FoodPage.foodList.length);
-    for (var i = 0; i < FoodPage.foodList.length; i++) {
+    console.log("FoodPage list: " + this.foodList.length);
+    /*for (var i = 0; i < this.foodList.length; i++) {
 
-      console.log(FoodPage.foodList[i].date);
-      console.log(FoodPage.foodList[i].paymentMethod);
-      console.log(FoodPage.foodList[i].amount);
-      console.log(FoodPage.foodList[i].note);
-    }
+      console.log(this.foodList[i].date);
+      console.log(this.foodList[i].paymentMethod);
+      console.log(this.foodList[i].amount);
+      console.log(this.foodList[i].note);
+    }*/
+    this.storage.get(StorageKeys.FOOD_LIST).then(value => {
+
+      var foods = JSON.parse(value);
+      if (foods.length != 0){
+        for (var i = 0; i < foods.length; i++) {
+          this.foodList.push(foods[i]);
+        }
+        console.log("array not empty!");
+      }
+      else {
+        console.log("array empty!");
+      }
+    }).catch((error) => {
+      this.error_msg = error.error;
+      console.log("error food");
+
+    });
+    console.log("FoodPage list: " + this.foodList.length);
 
   }
 
   addFoodExpense() {
 
     this.navCtrl.setRoot(AddFoodPage);
-
-    console.log("size: " + this.testF.length);
   }
 
   get theFoodList(){
-    return FoodPage.foodList;
+    return this.foodList;
   }
 
   ionViewWillEnter(){
 
     this.testF.push(new FoodModelPage("222", 22, "22", "22"));
     this.storage.set(StorageKeys.TEST, JSON.stringify(this.testF));
+    this.storage.set(StorageKeys.FOOD_LIST, JSON.stringify(this.foodList));
   }
 }

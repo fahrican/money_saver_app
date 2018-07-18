@@ -45,4 +45,21 @@ export class FoodModelPage {
   get note(): string {
     return this._note;
   }
+
+
+  set date(value: string) {
+    this._date = value;
+  }
+
+  set amount(value: number) {
+    this._amount = value;
+  }
+
+  set paymentMethod(value: string) {
+    this._paymentMethod = value;
+  }
+
+  set note(value: string) {
+    this._note = value;
+  }
 }

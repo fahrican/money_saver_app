@@ -32,9 +32,34 @@ export class AddFoodPage {
   @ViewChild('foodNote') foodNote;
   private fNote = "";
 
+  private foodListAddFood: Array<FoodModelPage> = [];
+  private error_msg: any;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private alertCtrl: AlertController, private storage: Storage) {
 
+
+    this.storage.get(StorageKeys.FOOD_LIST).then(value => {
+
+      var foods = JSON.parse(value);
+      if (foods.length != 0) {
+        if (foods.length !== this.foodListAddFood.length) {
+          for (var i = 0; i < foods.length; i++) {
+            this.foodListAddFood.push(foods[i]);
+            console.log(this.foodListAddFood[i]);
+          }
+        }
+        console.log("array not empty");
+      }
+      else {
+        console.log("array empty");
+      }
+    }).catch((error) => {
+      this.error_msg = error.error;
+      console.log("error: add-food");
+
+    });
   }
 
   presentAlert() {
@@ -63,8 +88,8 @@ export class AddFoodPage {
     }
     else {
       let foodPage: FoodModelPage = this.generateFoodPage();
-      FoodPage.foodList.push(foodPage);
-      this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
+      this.foodListAddFood.push(foodPage);
+      this.storage.set(StorageKeys.FOOD_LIST, JSON.stringify(this.foodListAddFood));
       this.navCtrl.setRoot(FoodPage);
     }
   }
@@ -81,15 +106,27 @@ export class AddFoodPage {
     return new FoodModelPage(this.fDate, this.fAmount, this.fPaymentMethod, this.fNote);
   }
 
-  subtractFromMonthlyBudget(){
+  subtractFromMonthlyBudget() {
 
     HomePage.mBudget -= this.fAmount;
     this.storage.set(StorageKeys.MONTHLY_BUDGET, HomePage.mBudget);
   }
 
-  addToMonthlyExpenses(){
+  addToMonthlyExpenses() {
 
     HomePage.monthlyExpenses = +HomePage.monthlyExpenses + +this.fAmount;
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, HomePage.monthlyExpenses);
+  }
+
+  ionViewDidLeave() {
+
+    console.log("add Food list: " + this.foodListAddFood.length);
+    for (var i = 0; i < this.foodListAddFood.length; i++) {
+
+      console.log(this.foodListAddFood[i].date);
+      console.log(this.foodListAddFood[i].paymentMethod);
+      console.log(this.foodListAddFood[i].amount);
+      console.log(this.foodListAddFood[i].note);
+    }
   }
 }

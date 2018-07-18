@@ -25,7 +25,8 @@ export class BudgetPage {
   @ViewChild('monthlyBudget') monthlyBudget;
   public budget: number = 0;
 
-  private testB = [new FoodModelPage("2012", 2, "cash", "test")];
+  private testB: Array<FoodModelPage> = [new FoodModelPage("1999", 2, "testB", "testB")];
+  private foodListBudget: Array<FoodModelPage> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
@@ -38,8 +39,7 @@ export class BudgetPage {
 
     this.storage.set(StorageKeys.MONTHLY_BUDGET, this.budget);
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
-    FoodPage.foodList = [];
-    this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
+    this.storage.set(StorageKeys.FOOD_LIST, JSON.stringify(this.foodListBudget));
     this.storage.set(StorageKeys.TEST, JSON.stringify(this.testB));
 
     this.navCtrl.setRoot(HomePage, {
@@ -52,15 +52,14 @@ export class BudgetPage {
     this.monthlyBudget.value = "";
     this.storage.set(StorageKeys.MONTHLY_BUDGET, 0);
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
-    FoodPage.foodList = [];
-    this.storage.set(StorageKeys.FOOD_LIST, FoodPage.foodList);
+    this.storage.set(StorageKeys.FOOD_LIST, []);
     this.storage.set(StorageKeys.TEST, []);
 
   }
 
   ionViewDidLoad() {
+    console.log(this.foodListBudget);
     console.log(this.testB);
-
   }
 
 }

@@ -4,6 +4,7 @@ import {Storage} from '@ionic/storage';
 import {StorageKeys} from "../../app/app.component";
 import {FoodPage} from "../food/food";
 import {HttpClientModule} from '@angular/common/http';
+import {FoodModelPage} from "../food-model/food-model";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class HomePage {
 
   public static mBudget: number = 0;
   public static monthlyExpenses: number = 0;
-  private testH = [];
+  private testH:Array<FoodModelPage> = [];
   error_msg: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -37,7 +38,6 @@ export class HomePage {
     }).catch((error) => {
       this.error_msg = error.error;
       console.log("error home");
-      console.log("eroor home");
     });
 
   }
