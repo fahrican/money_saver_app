@@ -51,7 +51,7 @@ export class FoodPage {
     /*for (var i = 0; i < this.foodList.length; i++) {
 
       console.log(this.foodList[i].date);
-      console.log(this.foodList[i].paymentMethod);
+      console.log(this.foodList[i].nameOfFriend);
       console.log(this.foodList[i].amount);
       console.log(this.foodList[i].note);
     }*/

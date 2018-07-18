@@ -19,6 +19,7 @@ export enum StorageKeys {
   MONTHLY_BUDGET = "budget",
   MONTHLY_EXPENSES = "monthlyExpenses",
   FOOD_LIST = "foodList",
+  LOAN_LIST = "loanList",
   TEST = "test"
 }
 

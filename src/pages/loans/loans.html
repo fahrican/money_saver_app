@@ -17,6 +17,26 @@
 <ion-content padding>
 
 
+  <ion-list>
+    <ion-item-sliding *ngFor="let loan of addLoanList">
+      <ion-item>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>
+              {{loan._date}}
+            </ion-card-title>
+            <ion-item>
+              <ion-icon name='pizza' item-start style="color: #d03e84"></ion-icon>
+              {{loan._nameOfFriend}}
+              <ion-badge item-end>{{loan._amount}}€</ion-badge>
+            </ion-item>
+            <p>{{loan._note}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
   <ion-fab right bottom>
     <button ion-fab color="default" (click)="addLoan()">
       <ion-icon name="add"></ion-icon>
