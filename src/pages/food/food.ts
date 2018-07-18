@@ -89,6 +89,6 @@ export class FoodPage {
 
     this.testF.push(new FoodModelPage("222", 22, "22", "22"));
     this.storage.set(StorageKeys.TEST, JSON.stringify(this.testF));
-    this.storage.set(StorageKeys.FOOD_LIST, JSON.stringify(this.foodList));
+    //this.storage.set(StorageKeys.FOOD_LIST, JSON.stringify(this.foodList));
   }
 }
