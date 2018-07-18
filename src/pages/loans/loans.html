@@ -18,19 +18,34 @@
 
 
   <ion-list>
-    <ion-item-sliding *ngFor="let loan of addLoanList">
+    <ion-item-sliding *ngFor="let loan of loansList">
       <ion-item>
-        <ion-card>
+        <ion-card *ngIf="loan._isDebt === false" color="danger">
           <ion-card-content>
             <ion-card-title>
               {{loan._date}}
             </ion-card-title>
             <ion-item>
-              <ion-icon name='pizza' item-start style="color: #d03e84"></ion-icon>
+              <ion-icon name='cash' item-start style="color: #d03e84"></ion-icon>
               {{loan._nameOfFriend}}
               <ion-badge item-end>{{loan._amount}}€</ion-badge>
             </ion-item>
             <p>{{loan._note}}</p>
+            <p>Debt: {{loan._isDebt}}</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card *ngIf="loan._isDebt === true" color="secondary">
+          <ion-card-content>
+            <ion-card-title>
+              {{loan._date}}
+            </ion-card-title>
+            <ion-item>
+              <ion-icon name='cash' item-start style="color: #d03e84"></ion-icon>
+              {{loan._nameOfFriend}}
+              <ion-badge item-end>{{loan._amount}}€</ion-badge>
+            </ion-item>
+            <p>{{loan._note}}</p>
+            <p>Debt: {{loan._isDebt}}</p>
           </ion-card-content>
         </ion-card>
       </ion-item>

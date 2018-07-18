@@ -72,9 +72,11 @@ export class AddLoanPage {
 
     if (value === 1){
       this.lIsDebt = true;
+      console.log("debt: " + this.lIsDebt);
     }
     else {
       this.lIsDebt = false;
+      console.log("debt: " + this.lIsDebt);
     }
   }
 
