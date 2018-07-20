@@ -26,7 +26,6 @@ export class BudgetPage {
   @ViewChild('monthlyBudget') monthlyBudget;
   public budget: number = 0;
 
-  private testB: Array<FoodModelPage> = [new FoodModelPage("1999", 2, "testB", "testB")];
   private foodListBudget: Array<FoodModelPage> = [];
   private loanListBudget: Array<LoanModelPage> = [];
 
@@ -43,7 +42,6 @@ export class BudgetPage {
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
     this.storage.set(StorageKeys.FOOD_LIST, JSON.stringify(this.foodListBudget));
     this.storage.set(StorageKeys.LOAN_LIST, JSON.stringify(this.loanListBudget));
-    this.storage.set(StorageKeys.TEST, JSON.stringify(this.testB));
 
     this.navCtrl.setRoot(HomePage, {
       budget: this.budget
@@ -57,13 +55,11 @@ export class BudgetPage {
     this.storage.set(StorageKeys.MONTHLY_EXPENSES, 0);
     this.storage.set(StorageKeys.FOOD_LIST, []);
     this.storage.set(StorageKeys.LOAN_LIST, []);
-    this.storage.set(StorageKeys.TEST, []);
 
   }
 
   ionViewDidLoad() {
     console.log(this.foodListBudget);
-    console.log(this.testB);
   }
 
 }

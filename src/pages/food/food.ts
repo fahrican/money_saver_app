@@ -23,24 +23,10 @@ import {HttpClientModule} from '@angular/common/http';
 export class FoodPage {
 
   private foodList:Array<FoodModelPage> = [];
-  private testF:Array<FoodModelPage> = [];
-  error_msg: any;
+  private error_msg: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
                private storage: Storage) {
-
-
-    this.storage.get(StorageKeys.TEST).then(value => {
-      //this.testF.push(JSON.parse(value));
-      var counters = JSON.parse(value);
-      for (var i = 0; i < counters.length; i++) {
-        this.testF.push(counters[i]);
-      }
-    }).catch((error) => {
-      this.error_msg = error.error;
-      console.log("error test");
-
-    });
 
 
   }
@@ -87,8 +73,6 @@ export class FoodPage {
 
   ionViewWillEnter(){
 
-    this.testF.push(new FoodModelPage("222", 22, "22", "22"));
-    this.storage.set(StorageKeys.TEST, JSON.stringify(this.testF));
     //this.storage.set(StorageKeys.FOOD_LIST, JSON.stringify(this.foodList));
   }
 }

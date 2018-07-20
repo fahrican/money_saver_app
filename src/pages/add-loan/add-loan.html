@@ -19,9 +19,7 @@
 
 <ion-content padding>
 
-
   <ion-list>
-
     <ion-item>
       <ion-label>Date:</ion-label>
       <ion-input type="text" required #loanDate [(ngModel)]="lDate"></ion-input>
@@ -41,10 +39,9 @@
       <ion-label>Note:</ion-label>
       <ion-input type="text" required #loanNote [(ngModel)]="lNote"></ion-input>
     </ion-item>
-
   </ion-list>
 
-  <ion-list radio-group [(ngModel)]="isDebt">
+  <ion-list radio-group [(ngModel)]="lIsDebt">
     <ion-item>
       <ion-label>Money I have to pay back</ion-label>
       <ion-radio (ionSelect)="isDebtAnswer(1)" value="true"></ion-radio>
@@ -54,7 +51,6 @@
       <ion-radio (ionSelect)="isDebtAnswer(2)" value="false"></ion-radio>
     </ion-item>
   </ion-list>
-
 
   <button ion-button color="danger" type="reset" (click)="clearLoanInput()">Delete</button>
   <button ion-button color="secondary" id="saveButton" (click)="saveLoan()">Save</button>
