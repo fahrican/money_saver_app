@@ -44,14 +44,14 @@
 
   </ion-list>
 
-  <ion-list radio-group [(ngModel)]="relationship">
+  <ion-list radio-group [(ngModel)]="isDebt">
     <ion-item>
       <ion-label>Money I have to pay back</ion-label>
-      <ion-radio (ionSelect)="isDebtAnswer(1)" value="payBack"></ion-radio>
+      <ion-radio (ionSelect)="isDebtAnswer(1)" value="true"></ion-radio>
     </ion-item>
     <ion-item>
       <ion-label>Money I get back from friend</ion-label>
-      <ion-radio (ionSelect)="isDebtAnswer(2)" value="getBack"></ion-radio>
+      <ion-radio (ionSelect)="isDebtAnswer(2)" value="false"></ion-radio>
     </ion-item>
   </ion-list>
 

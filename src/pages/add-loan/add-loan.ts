@@ -68,7 +68,7 @@ export class AddLoanPage {
 
   }
 
-  isDebtAnswer(value){
+  /*isDebtAnswer(value){
 
     if (value === 1){
       this.lIsDebt = true;
@@ -78,7 +78,7 @@ export class AddLoanPage {
       this.lIsDebt = false;
       console.log("debt: " + this.lIsDebt);
     }
-  }
+  }*/
 
   presentAlert() {
 
