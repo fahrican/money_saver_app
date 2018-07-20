@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import { IonicPage, NavController, AlertController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, AlertController, NavParams} from 'ionic-angular';
 import {StorageKeys} from "../../app/app.component";
 import {HomePage} from "../home/home";
 import {Storage} from '@ionic/storage';
@@ -68,17 +68,17 @@ export class AddLoanPage {
 
   }
 
- /* isDebtAnswer(value){
+  /* isDebtAnswer(value){
 
-    if (value === 1){
-      this.lIsDebt = true;
-      console.log("debt: " + this.lIsDebt);
-    }
-    else {
-      this.lIsDebt = false;
-      console.log("debt: " + this.lIsDebt);
-    }
-  }*/
+     if (value === 1){
+       this.lIsDebt = true;
+       console.log("debt: " + this.lIsDebt);
+     }
+     else {
+       this.lIsDebt = false;
+       console.log("debt: " + this.lIsDebt);
+     }
+   }*/
 
   presentAlert() {
 
@@ -104,6 +104,12 @@ export class AddLoanPage {
     this.storage.set(StorageKeys.MONTHLY_BUDGET, HomePage.mBudget);
   }
 
+  addToMonthyBudget() {
+
+    HomePage.mBudget = +HomePage.mBudget + +this.lAmount;
+    this.storage.set(StorageKeys.MONTHLY_BUDGET, HomePage.mBudget);
+  }
+
   addToMonthlyExpenses() {
 
     HomePage.monthlyExpenses = +HomePage.monthlyExpenses + +this.lAmount;
@@ -114,15 +120,20 @@ export class AddLoanPage {
 
     this.lDate = this.loanDate.value;
     this.lAmount = this.loanAmount.value;
-    this.subtractFromMonthlyBudget();
-    this.addToMonthlyExpenses();
+    if (this.lIsDebt) {
+      this.addToMonthyBudget();
+    } else {
+
+      this.subtractFromMonthlyBudget();
+      this.addToMonthlyExpenses();
+    }
     this.lNameOfFriend = this.loanNameOfFriend.value;
     this.lNote = this.loanNote.value;
 
     return new LoanModelPage(this.lDate, this.lAmount, this.lNameOfFriend, this.lNote, this.lIsDebt);
   }
 
-  saveLoan(){
+  saveLoan() {
 
     if (this.loanDate.value === "" || this.loanAmount.value === ""
       || this.loanNameOfFriend.value === "" || this.loanNote.value === "") {

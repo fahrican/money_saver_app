@@ -30,7 +30,7 @@
               {{loan._nameOfFriend}}
               <ion-badge item-end>{{loan._amount}}€</ion-badge>
             </ion-item>
-            <p style="color: #f4f4f4">{{loan._note}}</p>
+            <p color="dark">{{loan._note}}</p>
           </ion-card-content>
         </ion-card>
         <ion-card *ngIf="loan._isDebt === true">
@@ -43,7 +43,7 @@
               {{loan._nameOfFriend}}
               <ion-badge item-end color="danger">{{loan._amount}}€</ion-badge>
             </ion-item>
-            <p style="color: #000000">{{loan._note}}</p>
+            <p color="danger">{{loan._note}}</p>
           </ion-card-content>
         </ion-card>
       </ion-item>
