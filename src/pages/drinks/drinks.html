@@ -16,4 +16,30 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item-sliding *ngFor="let drink of drinkList">
+      <ion-item>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>
+              {{drink._date}}
+            </ion-card-title>
+            <ion-item>
+              <ion-icon name='beer' item-start style="color: #d03e84"></ion-icon>
+              {{drink._paymentMethod}}
+              <ion-badge item-end>{{drink._amount}}€</ion-badge>
+            </ion-item>
+            <p>{{drink._note}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="default" (click)="addDrinkExpense()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
 </ion-content>

@@ -21,6 +21,8 @@ import {IonicStorageModule} from '@ionic/storage';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
+import {AddDrinkPage} from "../pages/add-drink/add-drink";
+import {DrinkModelPage} from "../pages/drink-model/drink-model";
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import {SplashScreen} from '@ionic-native/splash-screen';
     AddFoodPage,
     FoodModelPage,
     AddLoanPage,
-    LoanModelPage
+    LoanModelPage,
+    AddDrinkPage,
+    DrinkModelPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,9 @@ import {SplashScreen} from '@ionic-native/splash-screen';
     AddFoodPage,
     FoodModelPage,
     AddLoanPage,
-    LoanModelPage
+    LoanModelPage,
+    AddDrinkPage,
+    DrinkModelPage
   ],
   providers: [
     StatusBar,
