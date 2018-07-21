@@ -19,6 +19,8 @@ import {AddLoanPage} from "../pages/add-loan/add-loan";
 import {LoanModelPage} from "../pages/loan-model/loan-model";
 import {AddClothesPage} from "../pages/add-clothes/add-clothes";
 import {ClothesModelPage} from "../pages/clothes-model/clothes-model";
+import {AddHealthPage} from "../pages/add-health/add-health";
+import {HealthModelPage} from "../pages/health-model/health-model";
 import {IonicStorageModule} from '@ionic/storage';
 
 import {StatusBar} from '@ionic-native/status-bar';
@@ -46,7 +48,9 @@ import {DrinkModelPage} from "../pages/drink-model/drink-model";
     AddDrinkPage,
     DrinkModelPage,
     AddClothesPage,
-    ClothesModelPage
+    ClothesModelPage,
+    AddHealthPage,
+    HealthPage
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,9 @@ import {DrinkModelPage} from "../pages/drink-model/drink-model";
     AddDrinkPage,
     DrinkModelPage,
     AddClothesPage,
-    ClothesModelPage
+    ClothesModelPage,
+    AddHealthPage,
+    HealthPage
   ],
   providers: [
     StatusBar,

@@ -9,7 +9,6 @@ import {DrinksPage} from "../pages/drinks/drinks";
 import {BudgetPage} from "../pages/budget/budget";
 import {ClothesPage} from "../pages/clothes/clothes";
 import {EarningsPage} from "../pages/earnings/earnings";
-import {ExpensesPage} from "../pages/expenses/expenses";
 import {HealthPage} from "../pages/health/health";
 import {LoansPage} from "../pages/loans/loans";
 import {NightLifePage} from "../pages/night-life/night-life";
@@ -22,6 +21,7 @@ export enum StorageKeys {
   LOAN_LIST = "loanList",
   DRINK_LIST = "drinkList",
   CLOTHES_LIST = "clothesList",
+  HEALTH_LIST = "healthList",
   TEST = "test"
 }
 
@@ -47,7 +47,6 @@ export class MyApp {
       {title: 'clothes', component: ClothesPage},
       {title: 'health', component: HealthPage},
       {title: 'night life', component: NightLifePage},
-      {title: 'expenses', component: ExpensesPage},
       {title: 'earnings', component: EarningsPage},
       {title: 'loans', component: LoansPage},
       {title: 'budget', component: BudgetPage}

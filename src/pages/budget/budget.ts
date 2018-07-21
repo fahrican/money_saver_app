@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoanModelPage} from "../loan-model/loan-model";
 import {DrinkModelPage} from "../drink-model/drink-model";
 import {ClothesModelPage} from "../clothes-model/clothes-model";
+import {HealthModelPage} from "../health-model/health-model";
 
 
 /**
@@ -32,6 +33,7 @@ export class BudgetPage {
   private loanListBudget: Array<LoanModelPage> = [];
   private drinkListBudget: Array<DrinkModelPage> = [];
   private clothesListBudget: Array<ClothesModelPage> = [];
+  private healthListBudget: Array<HealthModelPage> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
@@ -57,6 +59,7 @@ export class BudgetPage {
     this.storage.set(StorageKeys.LOAN_LIST, JSON.stringify(this.loanListBudget));
     this.storage.set(StorageKeys.DRINK_LIST, JSON.stringify(this.drinkListBudget));
     this.storage.set(StorageKeys.CLOTHES_LIST, JSON.stringify(this.clothesListBudget));
+    this.storage.set(StorageKeys.HEALTH_LIST, JSON.stringify(this.healthListBudget));
   }
 
   ionViewDidLoad() {
