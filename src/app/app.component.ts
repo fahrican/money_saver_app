@@ -21,6 +21,7 @@ export enum StorageKeys {
   FOOD_LIST = "foodList",
   LOAN_LIST = "loanList",
   DRINK_LIST = "drinkList",
+  CLOTHES_LIST = "clothesList",
   TEST = "test"
 }
 

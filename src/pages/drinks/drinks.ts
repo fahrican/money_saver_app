@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {AddDrinkPage} from "../add-drink/add-drink";
 import {Storage} from "@ionic/storage";
-import {FoodModelPage} from "../food-model/food-model";
 import {DrinkModelPage} from "../drink-model/drink-model";
 import {StorageKeys} from "../../app/app.component";
 
