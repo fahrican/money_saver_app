@@ -11,6 +11,7 @@ import {DrinkModelPage} from "../drink-model/drink-model";
 import {ClothesModelPage} from "../clothes-model/clothes-model";
 import {HealthModelPage} from "../health-model/health-model";
 import {NightLifeModelPage} from "../night-life-model/night-life-model";
+import {EarningsModelPage} from "../earnings-model/earnings-model";
 
 
 /**
@@ -36,6 +37,7 @@ export class BudgetPage {
   private clothesListBudget: Array<ClothesModelPage> = [];
   private healthListBudget: Array<HealthModelPage> = [];
   private nightLifeListBudget: Array<NightLifeModelPage> = [];
+  private earningsListBudget: Array<EarningsModelPage> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
@@ -63,6 +65,7 @@ export class BudgetPage {
     this.storage.set(StorageKeys.CLOTHES_LIST, JSON.stringify(this.clothesListBudget));
     this.storage.set(StorageKeys.HEALTH_LIST, JSON.stringify(this.healthListBudget));
     this.storage.set(StorageKeys.NIGHT_LIFE_LIST, JSON.stringify(this.nightLifeListBudget));
+    this.storage.set(StorageKeys.EARNINGS_LIST, JSON.stringify(this.earningsListBudget));
   }
 
   ionViewDidLoad() {

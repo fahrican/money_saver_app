@@ -23,6 +23,8 @@ import {AddHealthPage} from "../pages/add-health/add-health";
 import {HealthModelPage} from "../pages/health-model/health-model";
 import {AddNightLifePage} from "../pages/add-night-life/add-night-life";
 import {NightLifeModelPage} from "../pages/night-life-model/night-life-model";
+import {AddEarningsPage} from "../pages/add-earnings/add-earnings";
+import {EarningsModelPage} from "../pages/earnings-model/earnings-model";
 import {IonicStorageModule} from '@ionic/storage';
 
 import {StatusBar} from '@ionic-native/status-bar';
@@ -54,7 +56,9 @@ import {DrinkModelPage} from "../pages/drink-model/drink-model";
     AddHealthPage,
     HealthModelPage,
     AddNightLifePage,
-    NightLifeModelPage
+    NightLifeModelPage,
+    AddEarningsPage,
+    EarningsModelPage
   ],
   imports: [
     BrowserModule,
@@ -85,7 +89,9 @@ import {DrinkModelPage} from "../pages/drink-model/drink-model";
     AddHealthPage,
     HealthModelPage,
     AddNightLifePage,
-    NightLifeModelPage
+    NightLifeModelPage,
+    AddEarningsPage,
+    EarningsModelPage
   ],
   providers: [
     StatusBar,
